@@ -1,5 +1,5 @@
 {% set name = "LFPykit" %}
-{% set version = "0.2" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 72336a2332cd619b4e9d283995509356ff058b01234a72c024ec4d784877fc01
+  sha256: 35aa56c83e32d1477637e77886e3ae209ffca9e04890f5cc912cb7195c16d00c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -42,7 +42,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
-  summary: 'Electrostatic forward models for multicompartment neuron models'
+  summary: Electrostatic forward models for multicompartment neuron models
   description: |
     LFPykit is a collection of freestanding electrostatic forward models
     facilitating predictions of extracellular potentials, magnetic fields
