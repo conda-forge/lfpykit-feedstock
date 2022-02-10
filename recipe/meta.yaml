@@ -1,5 +1,5 @@
 {% set name = "LFPykit" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 17a6b835305c9ebb9e459c61b58f3423ef2b47e0e66f11c834753976971b6e90
+  sha256: ce92f5a987535ee72a76644bac90393eaa669d952f493dc388f3deb1c36f474d
 
 build:
   noarch: python
