@@ -29,8 +29,9 @@ requirements:
 test:
   requires:
     - pytest
-    - neuron  # [not win and py<39]
+    - neuron  # [not win]
     - h5py
+    - sympy
   imports:
     - lfpykit
     - lfpykit.tests
