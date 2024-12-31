@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a962029460c8173c4fec3923204e04d64c370b05740b64c2d07efbe29cbe63a6
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pip
     - numpy
     - scipy
@@ -32,6 +32,7 @@ test:
     - neuron  # [not win]
     - h5py
     - sympy
+    - python {{ python_min }}
   imports:
     - lfpykit
     - lfpykit.tests
