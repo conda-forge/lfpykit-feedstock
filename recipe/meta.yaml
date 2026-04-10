@@ -1,17 +1,17 @@
 {% set name = "LFPykit" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a962029460c8173c4fec3923204e04d64c370b05740b64c2d07efbe29cbe63a6
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  sha256: 14420786778039872ec2dc47af9adf4ea449bd6d80094acf966c1653814b02ef
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,9 +19,10 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - wheel
+    - poetry
   run:
     - python >={{ python_min }}
-    - pip
     - numpy
     - scipy
     - meautility
