@@ -20,6 +20,7 @@ requirements:
     - python {{ python_min }}
     - pip
     - wheel
+    - poetry
   run:
     - python >={{ python_min }}
     - numpy
