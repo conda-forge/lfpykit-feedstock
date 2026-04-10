@@ -19,9 +19,9 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - wheel
   run:
     - python >={{ python_min }}
-    - pip
     - numpy
     - scipy
     - meautility
